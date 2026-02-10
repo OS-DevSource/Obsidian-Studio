@@ -7,6 +7,8 @@ import { ProcessSection } from "@/components/process-section";
 import { ProofSection } from "@/components/proof-section";
 import { SiteFooter } from "@/components/site-footer";
 import { TopNav } from "@/components/top-nav";
+import { TrustRailSection } from "@/components/trust-rail-section";
+import { VisionSection } from "@/components/vision-section";
 
 export default function Home() {
   return (
@@ -15,6 +17,8 @@ export default function Home() {
         <TopNav />
         <main>
           <HeroSection />
+          <TrustRailSection />
+          <VisionSection />
           <ProofSection />
           <GallerySection />
           <ProcessSection />
