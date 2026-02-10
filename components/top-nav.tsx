@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site-config";
 
@@ -32,6 +33,7 @@ export function TopNav() {
 
           {/* Actions (right) */}
           <div className="flex items-center justify-end gap-2 sm:gap-3">
+            <ThemeToggle className="hidden sm:inline-flex" />
             <Button asChild size="sm" className="h-9 px-3 text-sm sm:h-10 sm:px-4">
               <Link href={siteConfig.ctaPrimaryHref}>{siteConfig.nav.ctaLabel}</Link>
             </Button>

@@ -2,6 +2,41 @@
 @import "./noise.css";
 
 :root {
+  color-scheme: light;
+  --background: 210 36% 97%;
+  --foreground: 222 32% 14%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 32% 14%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 32% 14%;
+  --muted: 210 34% 93%;
+  --muted-foreground: 215 16% 38%;
+  --primary: 163 70% 34%;
+  --primary-foreground: 0 0% 100%;
+  --primary-solid: 163 70% 34%;
+  --primary-solid-foreground: 0 0% 100%;
+  --secondary: 210 30% 92%;
+  --secondary-foreground: 222 32% 18%;
+  --accent: 210 30% 92%;
+  --accent-foreground: 222 32% 18%;
+  --border: 214 23% 82%;
+  --input: 214 23% 82%;
+  --ring: 163 70% 34%;
+  --destructive: 0 70% 48%;
+  --destructive-foreground: 0 0% 98%;
+  --radius: 1rem;
+  --radius-lg: 1.3rem;
+  --radius-md: 1rem;
+  --radius-sm: 0.75rem;
+  --shadow-soft: 0 14px 36px rgba(15, 23, 42, 0.15);
+  --shadow-strong: 0 28px 58px rgba(15, 23, 42, 0.2);
+  --glow-opacity: 0.16;
+  --glow-x: 70%;
+  --glow-y: 14%;
+  --font-display: var(--font-sans);
+}
+
+.dark {
   color-scheme: dark;
   --background: 221 38% 6%;
   --foreground: 210 40% 96%;
@@ -23,21 +58,13 @@
   --input: 219 20% 21%;
   --ring: 163 82% 52%;
   --destructive: 0 74% 58%;
-  --destructive-foreground: 0 0% 98%;
-  --radius: 1rem;
-  --radius-lg: 1.3rem;
-  --radius-md: 1rem;
-  --radius-sm: 0.75rem;
   --shadow-soft: 0 22px 42px rgba(2, 6, 23, 0.42);
   --shadow-strong: 0 36px 80px rgba(2, 6, 23, 0.58);
   --glow-opacity: 0.22;
-  --glow-x: 70%;
-  --glow-y: 14%;
-  --font-display: var(--font-sans);
 }
 
-.dark {
-  color-scheme: dark;
+.light {
+  color-scheme: light;
 }
 
 @theme inline {

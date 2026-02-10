@@ -1,4 +1,5 @@
 import { siteConfig } from "@/lib/site-config";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -9,6 +10,7 @@ export function SiteFooter() {
         <p>
           {siteConfig.brandName} {year}. All rights reserved.
         </p>
+        <ThemeToggle />
         <p>Premium conversion-led website redesigns for local service teams.</p>
       </div>
     </footer>

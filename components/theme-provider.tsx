@@ -3,13 +3,12 @@
 import { ThemeProvider } from "next-themes";
 
 export function ThemeProviders({ children }: { children: React.ReactNode }) {
-  // Theme is intentionally locked to dark for a cinematic premium presentation.
+  // Allow users to choose light, dark, or system preference.
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="dark"
-      forcedTheme="dark"
-      enableSystem={false}
+      defaultTheme="system"
+      enableSystem
       disableTransitionOnChange
       storageKey="showcase-theme"
     >
