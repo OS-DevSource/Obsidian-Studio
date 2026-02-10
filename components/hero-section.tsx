@@ -35,18 +35,18 @@ export function HeroSection() {
           </Badge>
 
           <div className="flex flex-col gap-4">
-            <h1 className="text-foreground text-4xl leading-[1.08] font-[var(--font-display)] font-semibold text-balance sm:text-5xl lg:text-[62px]">
-              <span className="block overflow-hidden pb-1">
+            <h1 className="text-foreground text-4xl leading-[1.24] font-[var(--font-display)] font-semibold sm:text-5xl sm:leading-[1.25] lg:text-[62px] lg:leading-[1.26]">
+              <span className="block">
                 <motion.span
                   initial={reduceMotion ? false : { y: 120 }}
                   animate={{ y: 0 }}
                   transition={{ duration: MOTION_DURATION_LONG, ease: MOTION_EASE }}
-                  className="inline-block"
+                  className="block"
                 >
                   {siteConfig.hero.headlineLines[0]}
                 </motion.span>
               </span>
-              <span className="block overflow-hidden pb-1">
+              <span className="block">
                 <motion.span
                   initial={reduceMotion ? false : { y: 120 }}
                   animate={{ y: 0 }}
@@ -55,7 +55,7 @@ export function HeroSection() {
                     ease: MOTION_EASE,
                     delay: MOTION_DELAY,
                   }}
-                  className="relative inline-block"
+                  className="relative block"
                 >
                   {accentParts ? (
                     <>
