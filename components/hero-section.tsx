@@ -30,7 +30,7 @@ export function HeroSection() {
 
       <div className="relative mx-auto grid max-w-6xl gap-9 px-6 pt-20 sm:pt-28 lg:grid-cols-[1fr,1fr] lg:items-center">
         <div className="flex flex-col gap-6 sm:gap-7">
-          <Badge className="w-fit border-white/14 bg-white/5 text-slate-200">
+          <Badge className="border-border/70 bg-card/70 text-muted-foreground w-fit">
             {siteConfig.hero.highlight}
           </Badge>
 
@@ -93,7 +93,7 @@ export function HeroSection() {
             {siteConfig.hero.trust.map((item) => (
               <div
                 key={item.value}
-                className="rounded-[var(--radius-sm)] border border-white/12 bg-white/5 px-3 py-3"
+                className="border-border/70 bg-card/70 rounded-[var(--radius-sm)] border px-3 py-3"
               >
                 <p className="text-foreground text-lg font-semibold sm:text-xl">{item.value}</p>
                 <p className="text-muted-foreground text-[11px] font-semibold tracking-wide uppercase">

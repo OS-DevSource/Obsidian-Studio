@@ -15,7 +15,7 @@ export function HeroVisualStage() {
   const visual = siteConfig.hero.visual;
 
   return (
-    <div className="relative overflow-hidden rounded-[28px] border border-white/12 bg-gradient-to-br from-white/8 via-white/3 to-transparent p-5 shadow-[var(--shadow-strong)] sm:p-6">
+    <div className="border-border/70 from-card via-card/90 to-muted/70 relative overflow-hidden rounded-[28px] border bg-gradient-to-br p-5 shadow-[var(--shadow-strong)] sm:p-6">
       <div className="pointer-events-none absolute inset-0">
         <div className="bg-primary/25 absolute -top-20 -right-8 h-56 w-56 rounded-full blur-3xl" />
         <div className="absolute -bottom-20 left-4 h-56 w-56 rounded-full bg-cyan-300/20 blur-3xl" />
@@ -30,14 +30,14 @@ export function HeroVisualStage() {
         <p className="text-primary text-xs font-semibold tracking-[0.18em] uppercase">
           {visual.headline}
         </p>
-        <h3 className="mt-3 max-w-md text-xl font-semibold text-white sm:text-2xl">
+        <h3 className="text-foreground mt-3 max-w-md text-xl font-semibold sm:text-2xl">
           {visual.title}
         </h3>
         <div className="mt-4 flex flex-wrap gap-2">
           {visual.chips.map((chip) => (
             <span
               key={chip}
-              className="rounded-full border border-white/12 bg-white/5 px-3 py-1 text-[11px] font-semibold tracking-wide text-slate-100"
+              className="border-border/70 bg-card/70 text-muted-foreground rounded-full border px-3 py-1 text-[11px] font-semibold tracking-wide"
             >
               {chip}
             </span>
@@ -70,13 +70,13 @@ export function HeroVisualStage() {
                 transition: { duration: MOTION_DURATION_LONG, ease: MOTION_EASE },
               },
             }}
-            className="rounded-2xl border border-white/12 bg-slate-950/55 p-4 backdrop-blur"
+            className="border-border/70 bg-card/80 rounded-2xl border p-4 backdrop-blur"
           >
-            <p className="text-[11px] font-semibold tracking-wide text-slate-300 uppercase">
+            <p className="text-muted-foreground text-[11px] font-semibold tracking-wide uppercase">
               {card.title}
             </p>
-            <p className="mt-2 text-2xl font-semibold text-white">{card.value}</p>
-            <p className="mt-1 text-xs text-slate-300">{card.detail}</p>
+            <p className="text-foreground mt-2 text-2xl font-semibold">{card.value}</p>
+            <p className="text-muted-foreground mt-1 text-xs">{card.detail}</p>
           </motion.article>
         ))}
       </motion.div>
