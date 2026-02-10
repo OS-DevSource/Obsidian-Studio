@@ -7,27 +7,78 @@ export const siteConfig = {
   ctaSecondaryLabel: "View work",
   ctaSecondaryHref: "#proof",
   contactEmail: "os.devsource@gmail.com",
-  splashPalette: ["#7F5AF0", "#6B46E6", "#9A7BFF"],
   nav: {
     ctaLabel: "Book a call",
     links: [
+      { label: "Vision", href: "#vision" },
       { label: "Proof", href: "#proof" },
-      { label: "Gallery", href: "#gallery" },
       { label: "Process", href: "#process" },
       { label: "FAQ", href: "#faq" },
     ],
   },
   hero: {
-    headlineLines: ["Premium website", "redesigns that turn first visits into booked calls."],
+    headlineLines: ["Premium redesigns for", "service teams that need booked calendars."],
     accentWord: "booked",
     subhead:
-      "We rebuild service business websites with strategic copy, refined UI, and measurable conversion lifts. No fluff, just confident results.",
-    highlight: "Conversion focused. Brand elevated. Launch ready.",
+      "We rebuild local service websites with conversion strategy, elevated design, and launch-ready execution that turns traffic into qualified calls.",
+    highlight: "Dark-mode premium. Conversion-first structure. Built to close.",
     trust: [
-      { label: "Example lift", value: "+42% qualified leads" },
-      { label: "Example lift", value: "-36% bounce rate" },
-      { label: "Example lift", value: "+58% call requests" },
+      { label: "Average lead lift", value: "+42%" },
+      { label: "Bounce reduction", value: "-36%" },
+      { label: "Call request growth", value: "+58%" },
     ],
+    visual: {
+      headline: "Pipeline confidence",
+      title: "Leads arriving with context, trust, and urgency.",
+      chips: ["CTA clarity", "Proof hierarchy", "Speed-optimized UI"],
+      cards: [
+        {
+          title: "Weekly qualified calls",
+          value: "84",
+          detail: "+17% month-over-month",
+        },
+        {
+          title: "Landing conversion",
+          value: "9.4%",
+          detail: "From 5.8% baseline",
+        },
+        {
+          title: "Sales follow-up speed",
+          value: "< 5m",
+          detail: "from form submit to first touch",
+        },
+      ],
+    },
+  },
+  trustRail: {
+    title: "Built for growth-focused local teams",
+    description: "Drop in your real logos later. The structure is ready for trust at first scroll.",
+    logos: ["Northwind HVAC", "Nova Dental", "Brightline Solar", "Summit Legal", "Atlas Build"],
+  },
+  vision: {
+    title: "Sell the vision before you ask for the form",
+    subtitle: "A premium site should feel like your team already leveled up.",
+    points: [
+      {
+        title: "First impressions set deal quality.",
+        body: "Premium hierarchy and message clarity help serious buyers self-select.",
+      },
+      {
+        title: "Proof must be felt, not buried.",
+        body: "Layered case cues and measurable outcomes reduce doubt in seconds.",
+      },
+      {
+        title: "Next steps should feel obvious.",
+        body: "Every section should reinforce one path: trust -> confidence -> booked call.",
+      },
+    ],
+    profileCard: {
+      name: "Ada Martinez",
+      role: "Growth Lead",
+      metricTitle: "Booked consultations",
+      metricValue: "+31% in 45 days",
+      tags: ["Local SEO", "UX rewrite", "Conversion QA"],
+    },
   },
   proof: {
     title: "Proof of polish, not promises",
@@ -41,8 +92,7 @@ export const siteConfig = {
   },
   gallery: {
     title: "Designed to feel tailored in any industry",
-    description:
-      "Each tile shows how the same quality system adapts to different service businesses.",
+    description: "Each card balances premium brand perception with practical conversion pathways.",
     items: [
       {
         title: "Home Services",

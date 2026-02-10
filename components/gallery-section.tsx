@@ -20,7 +20,7 @@ function GalleryTile({
   const [open, setOpen] = useState(false);
   const contentId = useId();
   const expanded = open;
-  const hint = isTouch ? "Tap for more detail" : "Hover for more detail";
+  const hint = isTouch ? "Tap for details" : "Hover for details";
 
   return (
     <button
@@ -29,12 +29,14 @@ function GalleryTile({
       aria-controls={contentId}
       onClick={() => setOpen((value) => !value)}
       className={cn(
-        "focus-ring group border-border bg-card relative flex h-auto w-full flex-col justify-start overflow-hidden rounded-[var(--radius-md)] border p-4 text-left transition sm:h-44 sm:p-5",
-        "hover:border-primary/40 hover:-translate-y-1 hover:shadow-[var(--shadow-soft)]",
-        "dark:hover:border-primary/60"
+        "border-border/70 bg-card/80 focus-ring group relative flex h-full w-full flex-col justify-between overflow-hidden rounded-[var(--radius-md)] border p-4 text-left transition sm:p-5",
+        "hover:border-primary/45 hover:-translate-y-1 hover:shadow-[var(--shadow-soft)]"
       )}
       data-open={expanded}
     >
+      <div className="bg-primary/18 absolute -top-16 -right-6 h-36 w-36 rounded-full blur-3xl" />
+      <div className="absolute -bottom-20 left-0 h-40 w-40 rounded-full bg-cyan-300/16 blur-3xl" />
+
       <div className="relative z-10">
         <p className="text-foreground text-sm font-semibold">{title}</p>
         <div id={contentId} className="text-muted-foreground mt-2 text-sm">
@@ -43,7 +45,7 @@ function GalleryTile({
         {detail && (
           <div
             className={cn(
-              "text-muted-foreground mt-2 text-xs transition-opacity",
+              "text-muted-foreground mt-3 text-xs transition-opacity",
               expanded ? "opacity-100" : isTouch ? "opacity-0" : "opacity-0 group-hover:opacity-100"
             )}
           >
@@ -51,17 +53,10 @@ function GalleryTile({
           </div>
         )}
       </div>
-      <span className="text-muted-foreground relative z-10 mt-3 hidden text-xs font-semibold tracking-wide uppercase sm:mt-6 sm:inline">
+
+      <span className="text-muted-foreground relative z-10 mt-4 text-[11px] font-semibold tracking-wide uppercase">
         {hint}
       </span>
-      <div
-        className={cn(
-          "absolute inset-0 opacity-0 transition",
-          expanded ? "opacity-100" : "group-hover:opacity-100"
-        )}
-      >
-        <div className="bg-primary/10 absolute inset-0" />
-      </div>
     </button>
   );
 }
@@ -69,18 +64,18 @@ function GalleryTile({
 export function GallerySection() {
   return (
     <section className="section-padding" id="gallery">
-      <div className="bg-background pointer-events-none absolute inset-0 z-0" aria-hidden="true" />
       <div className="relative z-10 mx-auto max-w-6xl px-6">
         <div className="flex flex-col gap-4">
           <Badge className="w-fit">Gallery</Badge>
-          <h2 className="text-3xl font-[var(--font-display)] font-semibold md:text-4xl">
+          <h2 className="text-foreground text-3xl font-[var(--font-display)] font-semibold md:text-4xl">
             {siteConfig.gallery.title}
           </h2>
           <p className="text-muted-foreground max-w-2xl">{siteConfig.gallery.description}</p>
         </div>
+
         <Reveal className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {siteConfig.gallery.items.map((item) => (
-            <RevealItem key={item.title}>
+            <RevealItem key={item.title} className="h-full">
               <GalleryTile title={item.title} description={item.description} detail={item.detail} />
             </RevealItem>
           ))}
