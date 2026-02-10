@@ -15,18 +15,21 @@ export function FaqSection() {
       <div className="mx-auto max-w-4xl px-6">
         <div className="flex flex-col gap-4">
           <Badge className="w-fit">FAQ</Badge>
-          <h2 className="text-3xl font-[var(--font-display)] font-semibold md:text-4xl">
+          <h2 className="text-3xl font-[var(--font-display)] font-semibold text-white md:text-4xl">
             {siteConfig.faq.title}
           </h2>
         </div>
-        <Accordion type="single" collapsible className="mt-8">
-          {siteConfig.faq.items.map((item) => (
-            <AccordionItem key={item.question} value={item.question}>
-              <AccordionTrigger>{item.question}</AccordionTrigger>
-              <AccordionContent>{item.answer}</AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+
+        <div className="mt-8 rounded-[var(--radius-md)] border border-white/12 bg-slate-950/55 p-2 sm:p-4">
+          <Accordion type="single" collapsible>
+            {siteConfig.faq.items.map((item) => (
+              <AccordionItem key={item.question} value={item.question}>
+                <AccordionTrigger>{item.question}</AccordionTrigger>
+                <AccordionContent>{item.answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </div>
     </section>
   );

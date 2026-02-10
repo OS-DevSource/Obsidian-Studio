@@ -11,14 +11,15 @@ export function DeliverablesSection() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col gap-4">
           <Badge className="w-fit">Deliverables</Badge>
-          <h2 className="text-3xl font-[var(--font-display)] font-semibold md:text-4xl">
+          <h2 className="text-3xl font-[var(--font-display)] font-semibold text-white md:text-4xl">
             {siteConfig.deliverables.title}
           </h2>
         </div>
+
         <Reveal className="mt-10 grid gap-4 md:grid-cols-2">
           {siteConfig.deliverables.items.map((item) => (
             <RevealItem key={item.title}>
-              <Card className="bg-card/90 h-full">
+              <Card className="h-full border-white/12 bg-slate-950/55">
                 <CardHeader>
                   <CardTitle>{item.title}</CardTitle>
                 </CardHeader>
