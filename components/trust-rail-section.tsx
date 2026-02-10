@@ -4,7 +4,7 @@ export function TrustRailSection() {
   return (
     <section id="trust" className="pb-8 sm:pb-12">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="rounded-[26px] border border-white/12 bg-white/4 p-5 sm:p-7">
+        <div className="border-border/70 bg-card/70 rounded-[26px] border p-5 sm:p-7">
           <p className="text-foreground text-base font-semibold sm:text-lg">
             {siteConfig.trustRail.title}
           </p>
@@ -14,7 +14,7 @@ export function TrustRailSection() {
             {siteConfig.trustRail.logos.map((logo) => (
               <div
                 key={logo}
-                className="rounded-xl border border-white/10 bg-slate-950/55 px-3 py-2 text-center text-xs font-semibold tracking-wide text-slate-300 uppercase"
+                className="border-border/70 bg-card/80 text-muted-foreground rounded-xl border px-3 py-2 text-center text-xs font-semibold tracking-wide uppercase"
               >
                 {logo}
               </div>

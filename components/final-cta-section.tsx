@@ -12,13 +12,13 @@ export function FinalCtaSection() {
           <Badge className="w-fit">Start</Badge>
 
           <div>
-            <h2 className="text-3xl font-[var(--font-display)] font-semibold text-white md:text-4xl">
+            <h2 className="text-foreground text-3xl font-[var(--font-display)] font-semibold md:text-4xl">
               {siteConfig.finalCta.title}
             </h2>
             <p className="text-muted-foreground mt-3 max-w-lg">{siteConfig.finalCta.description}</p>
           </div>
 
-          <div className="border-primary/28 bg-primary/10 rounded-2xl border p-4 text-sm text-slate-100">
+          <div className="border-primary/28 bg-primary/10 text-foreground rounded-2xl border p-4 text-sm">
             We run focused sprints built for outcomes, not open-ended redesign cycles.
           </div>
 
@@ -38,7 +38,7 @@ export function FinalCtaSection() {
           </p>
         </div>
 
-        <div className="rounded-[var(--radius-md)] border border-white/12 bg-slate-950/62 p-4 sm:p-6">
+        <div className="border-border/70 bg-card/80 rounded-[var(--radius-md)] border p-4 sm:p-6">
           <ContactForm />
         </div>
       </div>
