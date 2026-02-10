@@ -2,62 +2,40 @@
 @import "./noise.css";
 
 :root {
-  color-scheme: light;
-  --background: 0 0% 98%;
-  --foreground: 222 22% 12%;
-  --card: 0 0% 100%;
-  --card-foreground: 222 22% 12%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 222 22% 12%;
-  --muted: 0 0% 94%;
-  --muted-foreground: 220 9% 40%;
-  --primary: 255 83% 65%;
-  --primary-foreground: 0 0% 100%;
-  --secondary: 0 0% 94%;
-  --secondary-foreground: 222 22% 12%;
-  --accent: 0 0% 94%;
-  --accent-foreground: 222 22% 12%;
-  --border: 0 0% 88%;
-  --input: 0 0% 88%;
-  --ring: 255 83% 65%;
-  --destructive: 0 84% 60%;
+  color-scheme: dark;
+  --background: 221 38% 6%;
+  --foreground: 210 40% 96%;
+  --card: 221 29% 11%;
+  --card-foreground: 210 40% 96%;
+  --popover: 221 29% 10%;
+  --popover-foreground: 210 40% 96%;
+  --muted: 221 25% 15%;
+  --muted-foreground: 215 18% 71%;
+  --primary: 163 82% 52%;
+  --primary-foreground: 222 45% 10%;
+  --secondary: 221 25% 15%;
+  --secondary-foreground: 210 40% 96%;
+  --accent: 221 25% 15%;
+  --accent-foreground: 210 40% 96%;
+  --border: 219 20% 21%;
+  --input: 219 20% 21%;
+  --ring: 163 82% 52%;
+  --destructive: 0 74% 58%;
   --destructive-foreground: 0 0% 98%;
   --radius: 1rem;
-  --radius-lg: 1.25rem;
+  --radius-lg: 1.3rem;
   --radius-md: 1rem;
   --radius-sm: 0.75rem;
-  --shadow-soft: 0 16px 46px rgba(12, 14, 24, 0.08);
-  --shadow-strong: 0 28px 70px rgba(10, 12, 20, 0.16);
-  --glow-opacity: 0.14;
-  --glow-x: 50%;
-  --glow-y: 20%;
+  --shadow-soft: 0 22px 42px rgba(2, 6, 23, 0.42);
+  --shadow-strong: 0 36px 80px rgba(2, 6, 23, 0.58);
+  --glow-opacity: 0.22;
+  --glow-x: 70%;
+  --glow-y: 14%;
   --font-display: var(--font-sans);
 }
 
 .dark {
   color-scheme: dark;
-  --background: 0 0% 6%;
-  --foreground: 0 0% 96%;
-  --card: 0 0% 9%;
-  --card-foreground: 0 0% 96%;
-  --popover: 0 0% 10%;
-  --popover-foreground: 0 0% 96%;
-  --muted: 0 0% 12%;
-  --muted-foreground: 0 0% 70%;
-  --primary: 255 83% 65%;
-  --primary-foreground: 0 0% 98%;
-  --secondary: 0 0% 12%;
-  --secondary-foreground: 0 0% 96%;
-  --accent: 0 0% 12%;
-  --accent-foreground: 0 0% 96%;
-  --border: 0 0% 16%;
-  --input: 0 0% 16%;
-  --ring: 255 83% 65%;
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 0 0% 98%;
-  --shadow-soft: 0 18px 55px rgba(0, 0, 0, 0.45);
-  --shadow-strong: 0 30px 90px rgba(0, 0, 0, 0.65);
-  --glow-opacity: 0.18;
 }
 
 @theme inline {
@@ -96,22 +74,23 @@ html {
   scroll-behavior: smooth;
 }
 
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100%;
-  background: hsl(var(--background));
+  margin: 0;
+  background:
+    radial-gradient(760px circle at 78% -10%, hsl(var(--primary) / 0.18), transparent 60%),
+    radial-gradient(680px circle at 12% 35%, hsl(192 100% 60% / 0.12), transparent 64%),
+    hsl(var(--background));
   color: hsl(var(--foreground));
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
-.ambient-wash {
-  background:
-    radial-gradient(900px circle at 12% -12%, hsl(var(--primary) / 0.12), hsl(var(--primary) / 0)),
-    linear-gradient(180deg, hsl(var(--background) / 0.9), hsl(var(--background)));
-  opacity: 0.8;
-}
-
 ::selection {
-  background: hsl(var(--primary) / 0.25);
+  background: hsl(var(--primary) / 0.28);
   color: hsl(var(--foreground));
 }
 
@@ -141,12 +120,18 @@ select option:hover {
   text-wrap: balance;
 }
 
+.ambient-wash {
+  background:
+    radial-gradient(720px circle at 88% -4%, hsl(var(--primary) / 0.16), transparent 65%),
+    linear-gradient(180deg, hsl(var(--background) / 0.92), hsl(var(--background)));
+}
+
 .section-padding {
   position: relative;
   isolation: isolate;
   z-index: 0;
-  padding: 96px 0;
-  border-top: 1px solid hsl(var(--border) / 0.6);
+  padding: 88px 0;
+  border-top: 1px solid hsl(var(--border) / 0.72);
 }
 
 @media (max-width: 768px) {
@@ -165,19 +150,18 @@ select option:hover {
   position: absolute;
   inset: -20%;
   background: radial-gradient(
-    450px circle at var(--glow-x) var(--glow-y),
+    460px circle at var(--glow-x) var(--glow-y),
     hsl(var(--primary) / var(--glow-opacity)),
     hsl(var(--primary) / 0)
   );
-  opacity: 0.7;
-  transition: opacity 300ms ease;
+  opacity: 0.72;
   pointer-events: none;
 }
 
 .animated-gradient {
-  background-image: linear-gradient(120deg, hsl(var(--primary) / 0.9), hsl(var(--primary) / 0.35));
-  background-size: 200% 200%;
-  animation: gradientShift 12s ease infinite;
+  background-image: linear-gradient(120deg, hsl(var(--primary) / 0.88), hsl(192 100% 58% / 0.5));
+  background-size: 220% 220%;
+  animation: gradientShift 10s ease infinite;
 }
 
 @keyframes gradientShift {
@@ -195,26 +179,25 @@ select option:hover {
 .blob {
   position: absolute;
   border-radius: 999px;
-  filter: blur(0px);
-  opacity: 0.35;
+  opacity: 0.45;
   pointer-events: none;
   animation: floatBlob 16s ease-in-out infinite;
 }
 
 .blob.blob-one {
-  width: 320px;
-  height: 320px;
-  top: -120px;
-  left: -80px;
-  background: radial-gradient(circle, hsl(var(--primary) / 0.28), hsl(var(--primary) / 0));
+  width: 340px;
+  height: 340px;
+  top: -118px;
+  left: -88px;
+  background: radial-gradient(circle, hsl(var(--primary) / 0.3), hsl(var(--primary) / 0));
 }
 
 .blob.blob-two {
-  width: 260px;
-  height: 260px;
+  width: 280px;
+  height: 280px;
   bottom: -140px;
-  right: -60px;
-  background: radial-gradient(circle, hsl(var(--primary) / 0.22), hsl(var(--primary) / 0));
+  right: -70px;
+  background: radial-gradient(circle, hsl(192 100% 60% / 0.24), hsl(192 100% 60% / 0));
   animation-delay: -4s;
 }
 
@@ -222,7 +205,7 @@ select option:hover {
   width: 180px;
   height: 180px;
   top: 30%;
-  right: 10%;
+  right: 12%;
   background: radial-gradient(circle, hsl(var(--primary) / 0.18), hsl(var(--primary) / 0));
   animation-delay: -7s;
 }
@@ -232,32 +215,20 @@ select option:hover {
     transform: translate3d(0, 0, 0) scale(1);
   }
   50% {
-    transform: translate3d(12px, -18px, 0) scale(1.04);
+    transform: translate3d(12px, -16px, 0) scale(1.04);
   }
   100% {
     transform: translate3d(0, 0, 0) scale(1);
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .animated-gradient,
-  .blob,
-  .gradient-border {
-    animation: none;
-  }
-
-  html {
-    scroll-behavior: auto;
-  }
-}
-
 .gradient-border {
   padding: 1px;
   border-radius: inherit;
-  background: linear-gradient(120deg, hsl(var(--primary) / 0.65), hsl(var(--primary) / 0.2));
+  background: linear-gradient(120deg, hsl(var(--primary) / 0.72), hsl(192 100% 58% / 0.25));
   background-size: 200% 200%;
   background-position: 0% 50%;
-  opacity: 0.55;
+  opacity: 0.6;
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
@@ -270,7 +241,7 @@ select option:hover {
 
 .group:hover .gradient-border {
   animation-play-state: running;
-  opacity: 0.9;
+  opacity: 0.92;
 }
 
 @keyframes borderShimmer {
@@ -283,7 +254,7 @@ select option:hover {
 }
 
 .focus-ring:focus-visible {
-  outline: 2px solid hsl(var(--ring) / 0.9);
+  outline: 2px solid hsl(var(--ring) / 0.95);
   outline-offset: 3px;
 }
 
@@ -299,17 +270,26 @@ select option:hover {
 
 .sticky-shell {
   position: static;
-  top: 64px;
+  top: 84px;
   align-self: start;
   z-index: 0;
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 1025px) {
   .sticky-shell {
-    position: static;
+    position: sticky;
   }
 }
 
-html:focus-within {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: reduce) {
+  .animated-gradient,
+  .blob,
+  .gradient-border {
+    animation: none;
+  }
+
+  html,
+  html:focus-within {
+    scroll-behavior: auto;
+  }
 }
