@@ -15,7 +15,7 @@ export function ProofSection() {
           <div className="flex flex-col gap-5 sm:gap-6">
             <Badge className="w-fit">Proof</Badge>
             <div>
-              <h2 className="text-3xl font-[var(--font-display)] font-semibold text-white md:text-4xl">
+              <h2 className="text-foreground text-3xl font-[var(--font-display)] font-semibold md:text-4xl">
                 {siteConfig.proof.title}
               </h2>
               <p className="text-muted-foreground mt-3 text-base">{siteConfig.proof.description}</p>
@@ -25,7 +25,7 @@ export function ProofSection() {
               {siteConfig.proof.metrics.map((metric) => (
                 <div
                   key={metric.value}
-                  className="flex items-center justify-between rounded-xl border border-white/12 bg-white/5 px-4 py-3"
+                  className="border-border/70 bg-card/70 flex items-center justify-between rounded-xl border px-4 py-3"
                 >
                   <span className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
                     {metric.label}
@@ -35,7 +35,7 @@ export function ProofSection() {
               ))}
             </div>
 
-            <div className="border-primary/30 bg-primary/10 rounded-2xl border p-4 text-sm text-slate-100">
+            <div className="border-primary/30 bg-primary/10 text-foreground rounded-2xl border p-4 text-sm">
               Real numbers can replace every placeholder block in this section without changing the
               layout.
             </div>
@@ -48,12 +48,12 @@ export function ProofSection() {
               {siteConfig.caseStudies.map((study) => (
                 <RevealItem key={study.title} className="h-full">
                   <TiltCard className="h-full">
-                    <Card className="h-full rounded-[var(--radius-md)] border-white/12 bg-slate-950/55">
+                    <Card className="border-border/70 bg-card/80 h-full rounded-[var(--radius-md)]">
                       <CardHeader>
                         <CardTitle>{study.title}</CardTitle>
                         <p className="text-muted-foreground text-sm">Problem: {study.problem}</p>
                       </CardHeader>
-                      <CardContent className="space-y-2 text-[13px] text-slate-300 sm:space-y-3 sm:text-sm">
+                      <CardContent className="text-muted-foreground space-y-2 text-[13px] sm:space-y-3 sm:text-sm">
                         <p>Fix: {study.fix}</p>
                         <p className="text-foreground font-semibold">{study.result}</p>
                       </CardContent>

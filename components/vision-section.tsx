@@ -15,7 +15,7 @@ export function VisionSection() {
         <div className="flex flex-col gap-5">
           <Badge className="w-fit">Vision</Badge>
           <div>
-            <h2 className="text-3xl font-[var(--font-display)] font-semibold text-white md:text-4xl">
+            <h2 className="text-foreground text-3xl font-[var(--font-display)] font-semibold md:text-4xl">
               {siteConfig.vision.title}
             </h2>
             <p className="text-muted-foreground mt-3 max-w-xl">{siteConfig.vision.subtitle}</p>
@@ -35,13 +35,13 @@ export function VisionSection() {
                     "focus-ring w-full rounded-2xl border p-4 text-left transition",
                     active
                       ? "border-primary/55 bg-primary/12"
-                      : "hover:border-primary/30 border-white/10 bg-white/4 hover:bg-white/8"
+                      : "border-border/70 bg-card/70 hover:border-primary/30 hover:bg-card"
                   )}
                 >
                   <p
                     className={cn(
                       "text-lg font-semibold",
-                      active ? "text-white" : "text-slate-200"
+                      active ? "text-foreground" : "text-muted-foreground"
                     )}
                   >
                     {point.title}
@@ -56,26 +56,26 @@ export function VisionSection() {
         <div className="relative">
           <div className="bg-primary/20 absolute -top-14 left-2 h-56 w-56 rounded-full blur-3xl" />
 
-          <div className="relative rounded-[28px] border border-white/12 bg-gradient-to-br from-slate-900/85 via-slate-900/65 to-slate-950/80 p-5 shadow-[var(--shadow-strong)] sm:p-6">
-            <div className="rounded-2xl border border-white/10 bg-slate-950/65 p-5">
+          <div className="border-border/70 from-card via-card/90 to-muted/70 relative rounded-[28px] border bg-gradient-to-br p-5 shadow-[var(--shadow-strong)] sm:p-6">
+            <div className="border-border/70 bg-card/85 rounded-2xl border p-5">
               <p className="text-primary text-xs font-semibold tracking-[0.16em] uppercase">
                 Case signal
               </p>
-              <h3 className="mt-2 text-2xl font-semibold text-white">{profile.name}</h3>
+              <h3 className="text-foreground mt-2 text-2xl font-semibold">{profile.name}</h3>
               <p className="text-muted-foreground mt-1 text-sm">{profile.role}</p>
 
-              <div className="mt-5 rounded-2xl border border-white/10 bg-white/5 p-4">
-                <p className="text-xs font-semibold tracking-wide text-slate-300 uppercase">
+              <div className="border-border/70 bg-card/70 mt-5 rounded-2xl border p-4">
+                <p className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
                   {profile.metricTitle}
                 </p>
-                <p className="mt-2 text-2xl font-semibold text-white">{profile.metricValue}</p>
+                <p className="text-foreground mt-2 text-2xl font-semibold">{profile.metricValue}</p>
               </div>
 
               <div className="mt-5 flex flex-wrap gap-2">
                 {profile.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-white/12 bg-white/4 px-3 py-1 text-xs font-semibold text-slate-200"
+                    className="border-border/70 bg-card/70 text-muted-foreground rounded-full border px-3 py-1 text-xs font-semibold"
                   >
                     {tag}
                   </span>

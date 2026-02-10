@@ -29,7 +29,7 @@ function GalleryTile({
       aria-controls={contentId}
       onClick={() => setOpen((value) => !value)}
       className={cn(
-        "focus-ring group relative flex h-full w-full flex-col justify-between overflow-hidden rounded-[var(--radius-md)] border border-white/12 bg-slate-950/55 p-4 text-left transition sm:p-5",
+        "border-border/70 bg-card/80 focus-ring group relative flex h-full w-full flex-col justify-between overflow-hidden rounded-[var(--radius-md)] border p-4 text-left transition sm:p-5",
         "hover:border-primary/45 hover:-translate-y-1 hover:shadow-[var(--shadow-soft)]"
       )}
       data-open={expanded}
@@ -45,7 +45,7 @@ function GalleryTile({
         {detail && (
           <div
             className={cn(
-              "mt-3 text-xs text-slate-200 transition-opacity",
+              "text-muted-foreground mt-3 text-xs transition-opacity",
               expanded ? "opacity-100" : isTouch ? "opacity-0" : "opacity-0 group-hover:opacity-100"
             )}
           >
@@ -67,7 +67,7 @@ export function GallerySection() {
       <div className="relative z-10 mx-auto max-w-6xl px-6">
         <div className="flex flex-col gap-4">
           <Badge className="w-fit">Gallery</Badge>
-          <h2 className="text-3xl font-[var(--font-display)] font-semibold text-white md:text-4xl">
+          <h2 className="text-foreground text-3xl font-[var(--font-display)] font-semibold md:text-4xl">
             {siteConfig.gallery.title}
           </h2>
           <p className="text-muted-foreground max-w-2xl">{siteConfig.gallery.description}</p>
