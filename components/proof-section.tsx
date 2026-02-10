@@ -1,37 +1,31 @@
 "use client";
 
-import { useReducedMotion } from "framer-motion";
 import { BeforeAfterSlider } from "@/components/before-after-slider";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TiltCard } from "@/components/tilt-card";
 import { Reveal, RevealItem } from "@/components/reveal";
-import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site-config";
-import { useTouchDevice } from "@/lib/use-touch-device";
 
 export function ProofSection() {
-  const reduceMotion = useReducedMotion();
-  const isTouch = useTouchDevice();
-  const stickyEnabled = !reduceMotion && !isTouch;
-
   return (
     <section id="proof" className="section-padding">
       <div className="relative mx-auto max-w-6xl px-6">
-        <div className="grid gap-6 sm:gap-8 md:gap-10 lg:grid-cols-[0.9fr,1.1fr] lg:items-start">
-          <div className={cn("flex flex-col gap-4 sm:gap-6", stickyEnabled ? "sticky-shell" : "")}>
+        <div className="grid gap-7 sm:gap-9 lg:grid-cols-[0.88fr,1.12fr] lg:items-start">
+          <div className="flex flex-col gap-5 sm:gap-6">
             <Badge className="w-fit">Proof</Badge>
             <div>
-              <h2 className="text-3xl font-[var(--font-display)] font-semibold md:text-4xl">
+              <h2 className="text-3xl font-[var(--font-display)] font-semibold text-white md:text-4xl">
                 {siteConfig.proof.title}
               </h2>
               <p className="text-muted-foreground mt-3 text-base">{siteConfig.proof.description}</p>
             </div>
+
             <div className="grid gap-3">
               {siteConfig.proof.metrics.map((metric) => (
                 <div
                   key={metric.value}
-                  className="border-border bg-card flex items-center justify-between rounded-[var(--radius-sm)] border px-4 py-3"
+                  className="flex items-center justify-between rounded-xl border border-white/12 bg-white/5 px-4 py-3"
                 >
                   <span className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
                     {metric.label}
@@ -40,19 +34,26 @@ export function ProofSection() {
                 </div>
               ))}
             </div>
+
+            <div className="border-primary/30 bg-primary/10 rounded-2xl border p-4 text-sm text-slate-100">
+              Real numbers can replace every placeholder block in this section without changing the
+              layout.
+            </div>
           </div>
-          <div className="flex flex-col gap-4 sm:gap-6 md:gap-8">
+
+          <div className="flex flex-col gap-5 sm:gap-7">
             <BeforeAfterSlider beforeSrc="/before.png" afterSrc="/after.png" />
+
             <Reveal className="grid gap-4 md:grid-cols-3">
               {siteConfig.caseStudies.map((study) => (
                 <RevealItem key={study.title} className="h-full">
                   <TiltCard className="h-full">
-                    <Card className="border-border/80 bg-card/90 h-full rounded-[var(--radius-md)]">
+                    <Card className="h-full rounded-[var(--radius-md)] border-white/12 bg-slate-950/55">
                       <CardHeader>
                         <CardTitle>{study.title}</CardTitle>
                         <p className="text-muted-foreground text-sm">Problem: {study.problem}</p>
                       </CardHeader>
-                      <CardContent className="text-muted-foreground space-y-2 text-[13px] sm:space-y-3 sm:text-sm">
+                      <CardContent className="space-y-2 text-[13px] text-slate-300 sm:space-y-3 sm:text-sm">
                         <p>Fix: {study.fix}</p>
                         <p className="text-foreground font-semibold">{study.result}</p>
                       </CardContent>

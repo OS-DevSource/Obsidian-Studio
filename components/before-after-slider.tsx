@@ -74,6 +74,7 @@ export function BeforeAfterSlider({ beforeSrc, afterSrc, className }: BeforeAfte
         sizes="(max-width: 768px) 100vw, 50vw"
         className="object-cover"
         style={{ clipPath: `inset(0 ${100 - percent}% 0 0)` }}
+        priority
       />
       <div
         className="pointer-events-none absolute inset-0 flex items-center"
