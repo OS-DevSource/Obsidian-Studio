@@ -35,8 +35,8 @@ export function HeroSection() {
           </Badge>
 
           <div className="flex flex-col gap-4">
-            <h1 className="text-foreground text-4xl leading-[1.04] font-[var(--font-display)] font-semibold text-balance sm:text-5xl lg:text-[62px]">
-              <span className="block overflow-hidden">
+            <h1 className="text-foreground text-4xl leading-[1.08] font-[var(--font-display)] font-semibold text-balance sm:text-5xl lg:text-[62px]">
+              <span className="block overflow-hidden pb-1">
                 <motion.span
                   initial={reduceMotion ? false : { y: 120 }}
                   animate={{ y: 0 }}
@@ -46,7 +46,7 @@ export function HeroSection() {
                   {siteConfig.hero.headlineLines[0]}
                 </motion.span>
               </span>
-              <span className="block overflow-hidden">
+              <span className="block overflow-hidden pb-1">
                 <motion.span
                   initial={reduceMotion ? false : { y: 120 }}
                   animate={{ y: 0 }}
